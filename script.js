@@ -1,28 +1,18 @@
-const display = document.querySelector('.display');
-const numberButtons = document.querySelectorAll('.number');
-const operatorButtons = document.querySelectorAll('.operator');
+document.querySelectorAll('#calculator input[type="button"]').forEach(function(button) {
+  button.addEventListener('click', function(e) {
+    var display = document.getElementById('display');
+    var displayValue = display.value;
+    var buttonValue = e.target.value;
 
-let currentNumber = '';
-let previousNumber = '';
-let operator = '';
-
-function appendNumber(number) {
-    currentNumber += number;
-    display.textContent = currentNumber;
-}
-
-function chooseOperator(op) {
-    operator = op;
-    previousNumber = currentNumber;
-    currentNumber = '';
-}
-
-// (Add functions for calculation logic, clear button, etc.)
-
-numberButtons.forEach(button => {
-    button.addEventListener('click', () => appendNumber(button.textContent));
-});
-
-operatorButtons.forEach(button => {
-    button.addEventListener('click', () => chooseOperator(button.textContent));
+    if (buttonValue === 'C') {
+      // Clear display
+      display.value = '';
+    } else if (buttonValue === '=') {
+      // Calculate and show result
+      display.value = eval(displayValue);
+    } else {
+      // Add clicked button value to display
+      display.value += buttonValue;
+    }
+  });
 });
