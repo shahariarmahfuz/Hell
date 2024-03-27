@@ -1,22 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Growing Calculator</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interactive Growing Calculator</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f7f7f7;
+  }
+  #calculator {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    background: #fff;
+    transition: transform 0.2s;
+  }
+  #calculator:hover {
+    transform: scale(1.1);
+  }
+  input[type="button"] {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #e7e7e7;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  input[type="button"]:hover {
+    background-color: #d4d4d4;
+  }
+  input[type="text"] {
+    width: calc(100% - 22px);
+    height: 30px;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+</style>
 </head>
 <body>
-    <div class="calculator">
-        <div class="display"></div>
-        <div class="buttons">
-            <button class="number">7</button>
-            <button class="number">8</button>
-            <button class="number">9</button>
-            <button class="operator">+</button>
-            </div>
-    </div>
-
-    <script src="script.js"></script>
+<div id="calculator">
+  <input type="text" id="display" disabled>
+  <div>
+    <input type="button" value="1">
+    <input type="button" value="2">
+    <input type="button" value="3">
+    <input type="button" value="+">
+  </div>
+  <div>
+    <input type="button" value="4">
+    <input type="button" value="5">
+    <input type="button" value="6">
+    <input type="button" value="-">
+  </div>
+  <div>
+    <input type="button" value="7">
+    <input type="button" value="8">
+    <input type="button" value="9">
+    <input type="button" value="*">
+  </div>
+  <div>
+    <input type="button" value="C">
+    <input type="button" value="0">
+    <input type="button" value="=">
+    <input type="button" value="/">
+  </div>
+</div>
+<script>
+// JavaScript code for calculator logic will go here
+</script>
 </body>
 </html>
